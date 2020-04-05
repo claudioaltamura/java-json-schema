@@ -13,7 +13,6 @@ repositories {
 
 dependencies {
     implementation("com.google.guava:guava:28.0-jre")
-    implementation("com.github.java-json-tools:json-schema-validator:2.2.12")
     implementation("org.everit.json:org.everit.json.schema:1.5.1")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.1")
