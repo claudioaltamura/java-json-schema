@@ -51,7 +51,7 @@ class EveritJsonSchemaTest {
     try {
       schema.validate(jsonSubject);
     } catch (ValidationException ve) {
-      assertEquals(ve.getViolationCount(),1);
+      assertEquals(ve.getViolationCount(), 1);
       assertEquals(ve.getAllMessages().get(0), "#/price: -159.99 is not higher than 0");
     }
   }
