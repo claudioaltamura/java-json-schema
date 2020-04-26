@@ -15,6 +15,10 @@ dependencies {
     implementation("com.google.guava:guava:28.0-jre")
     implementation("org.everit.json:org.everit.json.schema:1.5.1")
 
+    implementation("com.networknt:json-schema-validator:1.0.38")
+    implementation("org.slf4j:slf4j-api:1.7.30")
+    implementation("ch.qos.logback:logback-classic:1.2.3")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.1")
     testImplementation("org.assertj:assertj-core:3.15.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.1")
