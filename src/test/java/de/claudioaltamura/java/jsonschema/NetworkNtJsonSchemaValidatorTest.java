@@ -15,24 +15,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
 import org.everit.json.schema.ValidationException;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
  * @see <a href="https://github.com/networknt/json-schema-validator>networknt json-schema-validator</a>
  */
-class NetworkNtJsonSchemaTest {
+class NetworkNtJsonSchemaValidatorTest {
 
   @Test
   @DisplayName("valid input when validating then valid")
   void givenValidInput_whenValidating_thenValid() throws ValidationException, IOException {
     JsonSchemaFactory factory = JsonSchemaFactory.getInstance(VersionFlag.V4);
-    InputStream is = NetworkNtJsonSchemaTest.class.getResourceAsStream("/product.schema.json");
+    InputStream is = NetworkNtJsonSchemaValidatorTest.class.getResourceAsStream("/product.schema.json");
     JsonSchema schema = factory.getSchema(is);
 
     ObjectMapper mapper = new ObjectMapper();
-    JsonNode node = mapper.readTree(NetworkNtJsonSchemaTest.class.getResourceAsStream("/product.json"));
+    JsonNode node = mapper.readTree(NetworkNtJsonSchemaValidatorTest.class.getResourceAsStream("/product.json"));
 
     Set<ValidationMessage> errors = schema.validate(node);
     assertThat(errors.size()).isEqualTo(0);
