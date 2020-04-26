@@ -13,6 +13,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @see <a href="https://github.com/everit-org/json-schema>everit-org json-schema</a>
+ */
 class EveritJsonSchemaTest {
 
   private JSONObject jsonSchema;
