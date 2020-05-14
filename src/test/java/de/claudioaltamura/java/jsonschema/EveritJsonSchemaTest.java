@@ -13,9 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-/**
- * @see <a href="https://github.com/everit-org/json-schema>everit-org json-schema</a>
- */
+/** @see <a href="https://github.com/everit-org/json-schema>everit-org json-schema</a> */
 class EveritJsonSchemaTest {
 
   private JSONObject jsonSchema;
@@ -54,8 +52,8 @@ class EveritJsonSchemaTest {
     try {
       schema.validate(jsonSubject);
     } catch (ValidationException ve) {
-      assertEquals(ve.getViolationCount(), 1);
-      assertEquals(ve.getAllMessages().get(0), "#/price: -159.99 is not higher than 0");
+      assertEquals(1, ve.getViolationCount());
+      assertEquals("#/price: -159.99 is not higher or equal to 0", ve.getAllMessages().get(0));
     }
   }
 
