@@ -33,6 +33,17 @@ class NetworkNtJsonSchemaValidatorTest {
   }
 
   @Test
+  @DisplayName("invalid input when validating then invalid")
+  void givenInvalidInput_whenValidating_thenInvalid() throws IOException {
+    JsonNode node =
+        mapper.readTree(
+            NetworkNtJsonSchemaValidatorTest.class.getResourceAsStream("/product-invalid.json"));
+
+    Set<ValidationMessage> errors = schema.validate(node);
+    assertThat(errors.size()).isEqualTo(1);
+  }
+
+  @Test
   @DisplayName("invalid input when validating then invalid with details")
   void givenInvalidInput_whenValidating_thenInvalid_With_Details() throws IOException {
     JsonNode node =
