@@ -26,7 +26,7 @@ class NetworkNtJsonSchemaValidatorTest {
 
   @BeforeEach
   public void beforeAll() {
-    JsonSchemaFactory factory = JsonSchemaFactory.getInstance(VersionFlag.V4);
+    JsonSchemaFactory factory = JsonSchemaFactory.getInstance(VersionFlag.V7);
     InputStream is =
         NetworkNtJsonSchemaValidatorTest.class.getResourceAsStream("/product.schema.json");
     schema = factory.getSchema(is);
